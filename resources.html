@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh" class="transition-colors duration-300">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关于</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+
+<body class="bg-blue-50 text-black dark:bg-gray-900 dark:text-white font-sans">
+    <header class="bg-white dark:bg-gray-800 shadow transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <nav class="flex gap-6 text-base">
+                <a href="index.html" class="hover:underline">首页</a>
+                <a href="form.html" class="hover:underline">中文版问卷</a>
+                <a href="resources.html" class="hover:underline">关于RAADS-R</a>
+            </nav>
+            <button id="dark-toggle" class="p-2 text-xl">
+                <span id="sun" class="block dark:hidden">🌅</span>
+                <span id="moon" class="hidden dark:block">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16 space-y-12">
+        <h1 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">RAADS-R介绍</h1>
+
+        <section class="bg-white dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">🖥️ 关于 RAADS-R</h2>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                RAADS-R（<strong>Ritvo Autism Asperger Diagnostic
+                    Scale–Revised</strong>）是一份用于帮助识别成年孤独症谱系障碍（ASD）个体的临床辅助工具，旨在补足当前主要面向儿童青少年的筛查工具的不足。
+                该量表由 <strong>Riva Ariella Ritvo 博士</strong> 等人开发，并于 2010 年扩大样本进行验证研究，涵盖了美国、澳大利亚、英国等多地数据。
+            </p>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                该量表共包含 80 道题目，从被试对自己 <strong>16 岁前与现在</strong> 的体验出发，覆盖四个主要维度：
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+                <li><strong>社交联结（Social Relatedness）</strong>：</br>包括第1, 6, 8, 11, ... 77题。
+                    涵盖同理心，情感互惠，说话是否过于直率，社交信号处理（同时和多个人社交是否可以应对），交朋友和维持友谊，是否经常需要通过模仿他人来显得合群，非语言交流（是否可以理解表情和肢体语言）等方面。</li>
+                <li><strong>局限性兴趣（Circumscribed Interests）</strong>：</br>包括第9, 13, 24, ... 78题。
+                    涵盖是否比起整体更先看到细节，对待计划被干扰的情绪反应，兴趣爱好的表现等方面。</li>
+                <li><strong>感官与动作（Sensory Motor）</strong>：</br>包括第10, 19, 4, ... 74题。
+                    涵盖音量控制，说话音调如何，感官是否容易过载和感官过于迟钝等方面。</li>
+                <li><strong>语言表达（Social Anxiety）</strong>：</br>包括第2, 7, 27, ... 15题。
+                    涵盖寒暄、语言来源（是否经常来自书籍或者电影）、表达方式（是否太书面化）等方面。</li>
+            </ul>
+        </section>
+
+        <section class="bg-white dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">💡 分数计算说明</h2>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                每题有四个选项：
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+                <li><strong>True now and when I was young</strong>（现在和小时候都符合）</li>
+                <li><strong>True now only</strong>（仅现在符合）</li>
+                <li><strong>True only when I was younger than 16</strong>（仅16岁之前符合）</li>
+                <li><strong>Never true</strong>（从不符合）</li>
+            </ul>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                对于第 1, 6, 11, 18, 23, 26, 33, 37, 43, 47, 48, 53, 62, 68, 72, 77 这 16 题，分数依次为：<strong>0, 1, 2,
+                    3</strong>。
+                对于其余题目，分数为：<strong>3, 2, 1, 0</strong>。
+            </p>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                最终会生成总分及四个维度的单独得分。
+            </p>
+        </section>
+        <section class="bg-white dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">🧩 分数的意义</h2>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                RAADS-R 是一种临床辅助工具，其主要目的包括但不限于：
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+                <li><strong>帮助识别那些在成长过程中 未被发现或未被诊断 的谱系个体</strong></li>
+                <li><strong>支持医生在评估过程中考虑 谱系特质 对当下生活功能的影响</strong></li>
+                <li><strong>引导被评估者回顾自己在不同阶段的认知、行为与适应情况</strong></li>
+            </ul>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                因此，你可能会注意到，题目选项中 “现在符合” 分值较高，反映出量表更关注 目前仍有谱系相关特征 的人群。而“仅小时候符合”则提示可能随着成长，这些表现已减少或被适应策略掩盖。
+            </p>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+                如果你对RAADS-R感兴趣，可以查看原始论文。
+            </p>
+        </section>
+
+        <div class="text-center pt-6">
+            <a href="https://doi.org/10.1007/s10803-010-1133-5" target="_blank"
+                class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:brightness-105 text-white font-medium px-6 py-2 rounded-xl shadow-md transition">
+                查看原始论文 📄
+            </a>
+        </div>
+    </main>
+</body>
+
+<footer
+    class="text-center py-6 text-sm text-gray-500 dark:text-gray-400 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border-t border-gray-200 dark:border-gray-700">
+    <p>本页面基于 Riva Ariella Ritvo 等人发表于 2011 年的开放获取论文改编，原始量表与研究说明请见
+        <a href="https://doi.org/10.1007/s10803-010-1133-5" target="_blank"
+            class="underline text-cyan-500 hover:text-cyan-600">原文链接</a>。
+    </p>
+    <p class="mt-2 text-xs text-gray-400">© 2025 Astrocyte. 网站设计与内容整理归属 Astrocyte 所有，RAADS-R 版权归原作者所有。</p>
+</footer>
+<script>
+    document.getElementById("dark-toggle").addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark")
+    })
+</script>
+
+</html>

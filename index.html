@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh" class="transition-colors duration-300 h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <style>
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom right, #fdf6e3, #f0f4f8);
+      background-repeat: no-repeat;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    html.dark body::before {
+      background-image: linear-gradient(to bottom right, #1f2937, #111827);
+      opacity: 0.03;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-50 text-black dark:bg-gray-900 dark:text-white font-sans h-full">
+  <div id="notice-modal"
+    class="hidden fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-black/40 backdrop-blur-md">
+    <div class="bg-white dark:bg-gray-800 text-black dark:text-white p-8 rounded-xl shadow-2xl w-[90%] max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">使用须知</h2>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+        <li>本问卷是基于RAADS-R的中文翻译，希望能帮助更多人进行自我探索，但并不作为诊断工具。数据不被储存或分析。若需要正式评估，请联系专业人士。</li>
+        <li>可以点击一些题目右侧的 🔽，查看解释与例子，希望能帮助你更好地回忆和判断 ✧(˶ˊᵕˋ˵)੭₎₎</li>
+        <li>除非题干写了“有时”“偶尔”，否则请根据长期行为模式作答。仅偶尔符合、或只出现过一两次的情况，不建议选“符合”。</li>
+      </ul>
+      <div class="mt-6 flex justify-between">
+        <button onclick="closeNotice()" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded">返回</button>
+        <a href="form.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">继续</a>
+      </div>
+    </div>
+  </div>
+  <header class="bg-white dark:bg-gray-800 shadow transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <nav class="flex gap-6 text-base">
+        <a href="index.html" class="hover:underline">首页</a>
+        <a href="form.html" class="hover:underline">中文版问卷</a>
+        <a href="resources.html" class="hover:underline">关于RAADS-R</a>
+      </nav>
+      <button id="dark-toggle" class="p-2 text-xl">
+        <span id="sun" class="block dark:hidden">🌅</span>
+        <span id="moon" class="hidden dark:block">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <section class="text-center space-y-4">
+      <div class="text-6xl">🫧</div>
+      <h1 class="text-5xl font-bold tracking-tight">RAADS-R 中文版问卷</h1>
+      <div class="pt-4">
+        <button onclick="openNotice()"
+          class="bg-gradient-to-r from-yellow-400 to-amber-500 hover:brightness-110 text-black font-medium px-6 py-2 rounded-xl shadow-md active:scale-95 transition-all">
+          开始测试 ✨
+        </button>
+      </div>
+    </section>
+
+
+    <section
+      class="bg-white dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl space-y-4 transition hover:shadow-2xl">
+      <h2 class="text-2xl font-bold">RAADS-R 是什么？</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <span class="font-semibold text-black dark:text-white">RAADS-R（<span class="font-bold">Ritvo Autism Asperger
+            Diagnostic Scale–Revised</span>）</span>
+        是一份用于帮助识别成年孤独症谱系障碍（ASD）个体的临床辅助工具，由 <strong>Riva Ariella Ritvo 博士</strong> 等人开发，并于 2010 年扩大样本进行验证研究。
+      </p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        该量表共有 80 道关于社交、生活体验和习惯的单选题，每道题有四个选项：
+      </p>
+      <ul class="list-disc pl-6 text-gray-600 dark:text-gray-400">
+        <li><strong>True now and when I was young</strong>（现在和小时候都符合）</li>
+        <li><strong>True now only</strong>（仅现在符合）</li>
+        <li><strong>True only when I was younger than 16</strong>（仅16岁之前符合）</li>
+        <li><strong>Never true</strong>（从不符合）</li>
+      </ul>
+      <div class="text-center pt-4">
+        <a href="resources.html"
+          class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:brightness-105 text-black font-medium px-6 py-2 rounded-xl transition">阅读更多🌟</a>
+      </div>
+    </section>
+
+    <section
+      class="bg-white dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl space-y-3 text-center transition hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">站点维护：Astrocyte</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 italic">一只星形胶质细胞 💭对这个网站有什么建议的话，可以按照下面的方式联系我！</p>
+      <div class="text-sm pt-2 space-y-1">
+        <p class="text-gray-500 dark:text-gray-400">📮 邮箱：<a href="mailto:ariastrocyte@outlook.com"
+            class="underline">ariastrocyte@outlook.com</a></p>
+        <p class="text-gray-500 dark:text-gray-400">📎 小红书：<a href="https://www.xiaohongshu.com/user/happy0_0yeah"
+            target="_blank" class="underline">@Astrocyte</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer
+    class="text-center py-6 text-sm text-gray-500 dark:text-gray-400 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border-t border-gray-200 dark:border-gray-700">
+    <p>本页面基于 Riva Ariella Ritvo 等人发表于 2011 年的开放获取论文改编，原始量表与研究说明请见
+      <a href="https://doi.org/10.1007/s10803-010-1133-5" target="_blank"
+        class="underline text-cyan-500 hover:text-cyan-600">原文链接</a>。
+    </p>
+    <p class="mt-2 text-xs text-gray-400">© 2025 Astrocyte. 网站设计与内容整理归属 Astrocyte 所有，RAADS-R 版权归原作者所有。</p>
+  </footer>
+
+  <script>
+    document.getElementById("dark-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+    function openNotice() {
+      document.getElementById("notice-modal").classList.remove("hidden")
+    }
+    function closeNotice() {
+      document.getElementById("notice-modal").classList.add("hidden")
+    }
+  </script>
+</body>
+
+</html>
